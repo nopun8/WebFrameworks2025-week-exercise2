@@ -1,12 +1,22 @@
-import './App.css'
+import CourseList from './CourseList';
+import './App.css';
 
-function App() {
-
-  return (
-    <>
-      <div>Week exercise 2 - Read README.md for instructions</div>
-    </>
-  )
+interface CourseData {
+  name: string;
+  courseId: string;
+  studentPositions: number;
 }
 
-export default App
+interface AppProps {
+  courses: CourseData[];
+}
+
+function App({ courses }: AppProps) {
+  return (
+    <div className="App">
+      <CourseList courses={courses} />
+    </div>
+  );
+}
+
+export default App;
